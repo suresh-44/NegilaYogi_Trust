@@ -3,6 +3,7 @@
     session_start();
     if (!isset($_SESSION['name']) and !isset($_SESSION['name'])) {
         header("Location: index.php");
+        session_destroy();
     }
     // session_destroy();
 
@@ -121,7 +122,7 @@ font-size: 18px;
     <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 <div class="header">
         <h1> &nbsp;N e g i l a   Y o g i   T r u s t</h1> 
-                        <a href="index.php" class="the-click-button" id="button" placeholder="tejas">Logout</a>
+                        <a href="logout.php" class="the-click-button" id="button" placeholder="tejas">Logout</a>
         </div>
         <div id="stage">
 
