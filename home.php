@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     session_start();
     if (!isset($_SESSION['name']) and !isset($_SESSION['name'])) {
@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <title>Home_page</title>
 
-    
+
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/home.css" media="screen" />
 
@@ -37,7 +37,7 @@ width: 100%;
 
 .the-click-button {
     background-color: rgba(255, 80, 53, 0.901961);
-   
+
     background-position: 20px -12px, 20px 4px;
     background-repeat: no-repeat;
     background-size: 22px, 22px;
@@ -108,8 +108,23 @@ font-size: 18px;
     transition-duration: 0.2s, 0.2s, 0.2s, 0.2s;
     transition: color 200ms ease, background-color 200ms ease, opacity 200ms ease, background-position 200ms ease, transform 50ms ease, -webkit-transform 50ms ease;
     -webkit-touch-callout: none; /* iOS Safari */ -webkit-user-select: none; /* Chrome/Safari/Opera */ -moz-user-select: none; /* Firefox */ -ms-user-select: none; /* Internet Explorer/Edge */
-} 
+}
+#align {
 
+
+
+
+    background-color: rgba(red, green, blue, alpha);
+}
+
+#col{
+
+  background-color: rgba(0, 0, 255, 0.1);
+  border-color:transparent;
+  border-width: -10px;
+  border-color: rgba(0, 0, 255, 0.0);
+margin-left: 1370px;
+}
 </style>
 </head>
 <body>
@@ -121,8 +136,10 @@ font-size: 18px;
 
     <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 <div class="header">
-        <h1> &nbsp;N e g i l a   Y o g i   T r u s t</h1> 
-                        <a href="logout.php" class="the-click-button" id="button" placeholder="tejas">Logout</a>
+        <h1> &nbsp;N e g i l a   Y o g i   T r u s t</h1>
+        <a href="logout.php" class="btn btn-info btn-lg" id="col">
+<span class="glyphicon glyphicon-log-out" id="align"></span> Log out
+</a>
         </div>
         <div id="stage">
 
