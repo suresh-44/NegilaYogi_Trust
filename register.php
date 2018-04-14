@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 
     <!-- Latest compiled and minified JavaScript -->
-
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <style type="text/css">
-    
-
 div.ex3 {
 
     width: 1200px;
@@ -73,10 +72,10 @@ div.ex3 {
   width:100%;
   height:calc(100% - 200px);
   margin-top:100px;
-  
+
   float:left;
   overflow-y:scroll;
-}  
+}
 
 .the-click-button{
 
@@ -85,7 +84,7 @@ height: 20px;
 background-color: transparent;
 
 
-} 
+}
 .margin{
 
     margin-left: 800px;
@@ -100,28 +99,47 @@ background-color: transparent;
 
     <script type="text/javascript">
     function dynInput(cbox) {
-      if (cbox.checked) {
-        var input = document.createElement("input");
-        input.setAttribute("id", "datepicker");
-         input.type = "text";
-        var div = document.createElement("div");
-        div.id = cbox.name;
-        div.innerHTML = "Text to display for " + cbox.name;
-        div.appendChild(input);
-        document.getElementById("insertinputs").appendChild(div);
-      } else {
-        document.getElementById(cbox.name).remove();
-      }
+        if (cbox.checked) {
+         var input1 = document.createElement("input");
+         var input2 = document.createElement("input");
+         input1.type = "date";
+         input2.type = "date";
+         var div = document.createElement("div");
+         var div1 = document.createElement("div");
+         div.id = cbox.name;
+         div1.id = cbox.name;
+       //  div.innerHTML = "Text to display for " + cbox.name;
+         div.appendChild(input1);
+         div1.appendChild(input2);
+
+         document.getElementById("insertinputs1").appendChild(div);
+         document.getElementById("insertinputs2").appendChild(div1);
+        	var d1 = document.getElementById(cbox.name)
+   			var	d2 = document.getElementById(cbox.name)
+   			d1.style.color = 'Black'
+   			d2.style.color = 'Black'
+   			d1.insertAdjacentHTML('beforebegin', '<p id="id-01">FROM</p>');
+   			d2.insertAdjacentHTML('afterend', '<p id="id-02">TO</p>');
+       } else {
+
+          document.getElementById(cbox.name).remove();
+          document.getElementById(cbox.name).remove();
+          var ele = document.getElementById('id-01');
+          var ele1 = document.getElementById('id-02');
+          ele.remove();
+          ele1.remove();
+       }
+
     }
 </script>
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
       $( function() {
-        $( "#datepicker" ).datepicker();
+        $( "#datepicker" ).datepicker()
       } );
   </script>
 
@@ -137,12 +155,12 @@ background-color: transparent;
         <fieldset>
 
             <!-- Form Name -->
-            <br /> 
+            <br />
             <legend class="legnd">N e g i l a &nbsp;&nbsp;&nbsp;Y o g i &nbsp;&nbsp;&nbsp; T r u s t
 
             <div class="margin">
             <a href="Home.php" class="the-click-button" placeholder="tejas">Home</a>
-            
+
             <a href="report.php" class="the-click-button">Report</a>
 </div>
             </legend>
@@ -151,15 +169,16 @@ background-color: transparent;
 
 
             <!-- The button HTML code -->
-            
+
 
 
             <div class="form-group">
                 <label class="col-md-4 control-label">First Name</label>
+
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+                        <input required name="first_name" placeholder="First Name" class="form-control"  type="text">
                     </div>
                 </div>
             </div>
@@ -171,7 +190,7 @@ background-color: transparent;
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+                        <input required name="last_name" placeholder="Last Name" class="form-control"  type="text">
                     </div>
                 </div>
             </div>
@@ -182,7 +201,7 @@ background-color: transparent;
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+                        <input  name="email" placeholder="E-Mail Address" class="form-control"  type="text" >
                     </div>
                 </div>
             </div>
@@ -195,7 +214,7 @@ background-color: transparent;
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                        <input name="phone" placeholder="phone no" class="form-control" type="text">
+                        <input required name="phone" placeholder="phone no" class="form-control" type="text">
                     </div>
                 </div>
             </div>
@@ -204,7 +223,7 @@ background-color: transparent;
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
-                        <input name="occupation" placeholder="Occupation" class="form-control"  type="text">
+                        <input required name="occupation" placeholder="Occupation" class="form-control"  type="text">
                     </div>
                 </div>
             </div>
@@ -216,7 +235,7 @@ background-color: transparent;
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                        <input name="address" placeholder="Address" class="form-control" type="text">
+                        <input required name="address" placeholder="Address" class="form-control" type="text">
                     </div>
                 </div>
             </div>
@@ -228,7 +247,7 @@ background-color: transparent;
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                        <input name="city" placeholder="city" class="form-control"  type="text">
+                        <input required name="city" placeholder="city" class="form-control"  type="text">
                     </div>
                 </div>
             </div>
@@ -286,7 +305,7 @@ background-color: transparent;
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                        <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
+                        <input required name="zip" placeholder="Zip Code" class="form-control"  type="text">
                     </div>
                 </div>
             </div>
@@ -302,9 +321,10 @@ background-color: transparent;
                         <label>
                             <input type="checkbox" name="hosting" onclick="dynInput(this)" /> Yes
                         </label>
-                        <p id="insertinputs"></p>
+                        <div id="insertinputs1"></div>  <div id="insertinputs2"></div>
+
                     </div>
-                   
+
                 </div>
             </div>
 
@@ -325,7 +345,7 @@ background-color: transparent;
             <input type='file' onchange="readURL(this);" />
 
             <!-- Success message -->
-            
+
 
             <!-- Button -->
             <div class="form-group">
@@ -338,6 +358,141 @@ background-color: transparent;
         </fieldset>
 
     </form>
+
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+
+<script type="text/javascript">
+
+   $(document).ready(function() {
+    $('#reg_form').bootstrapValidator({
+
+        fields: {
+            first_name: {
+                validators: {
+                        stringLength: {
+                        min: 2,
+                    },
+                        notEmpty: {
+                        message: 'Please supply your first name'
+                    }
+                }
+            },
+             last_name: {
+                validators: {
+                     stringLength: {
+                        min: 2,
+                    },
+                    notEmpty: {
+                        message: 'Please supply your last name'
+                    }
+                }
+            },
+
+            phone: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please supply your phone number'
+                    },
+                    phone: {
+                        country: 'IND',
+                        message: 'Please supply a vaild phone number with area code'
+                    }
+                }
+            },
+            address: {
+                validators: {
+                     stringLength: {
+                        min: 8,
+                    },
+                    notEmpty: {
+                        message: 'Please supply your street address'
+                    }
+                }
+            },
+            city: {
+                validators: {
+                     stringLength: {
+                        min: 4,
+                    },
+                    notEmpty: {
+                        message: 'Please supply your city'
+                    }
+                }
+            },
+            state: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please select your state'
+                    }
+                }
+            },
+            zip: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please supply your zip code'
+                    },
+                    zipCode: {
+                        country: 'IN',
+                        message: 'Please supply a vaild zip code'
+                    }
+                }
+            },
+		comment: {
+                validators: {
+                      stringLength: {
+                        min: 10,
+                        max: 200,
+                        message:'Please enter at least 10 characters and no more than 200'
+                    },
+                    notEmpty: {
+                        message: 'Please supply a description about yourself'
+                    }
+                    }
+                 },
+	 email: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please supply your email address'
+                    },
+                    emailAddress: {
+                        message: 'Please supply a valid email address'
+                    }
+                }
+            },
+
+
+
+            }
+        })
+
+
+        .on('success.form.bv', function(e) {
+            $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+                $('#reg_form').data('bootstrapValidator').resetForm();
+
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+                console.log(result);
+            }, 'json');
+        });
+});
+
+
+
+ </script>
+
 </div>
 </div>
 </div>
@@ -378,7 +533,7 @@ background-color: transparent;
                                             address='$address',
                                             city = '$city',
                                             zip_code = '$zip_code',
-                                            description = '$description'";  
+                                            description = '$description'";
         $result=  mysqli_query($connect, $query);
 
         mysqli_close($connect);
