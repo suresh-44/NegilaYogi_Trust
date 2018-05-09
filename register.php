@@ -397,7 +397,11 @@ background-color: transparent;
                         message: 'Please supply your phone number'
                     },
                     phone: {
+<<<<<<< HEAD
                         country: 'IND',
+=======
+                        country: 'US',
+>>>>>>> 442979eae7cd29c83e489f203c69d4f78a1cdc1b
                         message: 'Please supply a vaild phone number with area code'
                     }
                 }
