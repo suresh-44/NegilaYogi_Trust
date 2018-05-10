@@ -1,9 +1,19 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['name']) and !isset($_SESSION['name'])) {
+        header("Location: index.php");
+        session_destroy();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Negila Yogi</title>
     <link rel="stylesheet" type="text/css" href="css/E_form_css.css" media="screen" />
+
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -99,38 +109,23 @@ background-color: transparent;
 
     <script type="text/javascript">
     function dynInput(cbox) {
-        if (cbox.checked) {
-         var input1 = document.createElement("input");
-         var input2 = document.createElement("input");
-         input1.type = "date";
-         input2.type = "date";
-         var div = document.createElement("div");
-         var div1 = document.createElement("div");
-         div.id = cbox.name;
-         div1.id = cbox.name;
-       //  div.innerHTML = "Text to display for " + cbox.name;
-         div.appendChild(input1);
-         div1.appendChild(input2);
 
-         document.getElementById("insertinputs1").appendChild(div);
-         document.getElementById("insertinputs2").appendChild(div1);
-        	var d1 = document.getElementById(cbox.name)
-   			var	d2 = document.getElementById(cbox.name)
-   			d1.style.color = 'Black'
-   			d2.style.color = 'Black'
-   			d1.insertAdjacentHTML('beforebegin', '<p id="id-01">FROM</p>');
-   			d2.insertAdjacentHTML('afterend', '<p id="id-02">TO</p>');
-       } else {
+              if (cbox.checked) {
+                   var html1,html2;
+                   html1 = '<div id="date-01" >From<input type="date" value="from" style="color: Black" name"date1" /> </div>'
+                   html2 = '<div id="date-02" >TO<input type="date" value="to" style="color: Black"  name"date2" /> </div>'
+                   var d1 = document.getElementById('insertinputs1');
+                   var d2 = document.getElementById('insertinputs2');
+                   d1.insertAdjacentHTML('afterend',html1);
+                   d2.insertAdjacentHTML('afterend',html2);
+               } else {
+               	var el = document.getElementById('date-01');
+                var el1 = document.getElementById('date-02');
+        		el.remove();
+                el1.remove();
 
-          document.getElementById(cbox.name).remove();
-          document.getElementById(cbox.name).remove();
-          var ele = document.getElementById('id-01');
-          var ele1 = document.getElementById('id-02');
-          ele.remove();
-          ele1.remove();
+              }
        }
-
-    }
 </script>
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -397,11 +392,9 @@ background-color: transparent;
                         message: 'Please supply your phone number'
                     },
                     phone: {
-<<<<<<< HEAD
+
                         country: 'IND',
-=======
-                        country: 'US',
->>>>>>> 442979eae7cd29c83e489f203c69d4f78a1cdc1b
+
                         message: 'Please supply a vaild phone number with area code'
                     }
                 }
@@ -510,6 +503,7 @@ background-color: transparent;
 
 
 <?php
+
     if (isset($_REQUEST['upload']) ){
 
         $first = $_REQUEST['first_name'];
@@ -521,6 +515,11 @@ background-color: transparent;
         $city = $_REQUEST['city'];
         $zip_code = $_REQUEST['zip'];
         $description = $_REQUEST['comment'];
+        $Subscription = $_REQUEST['Subscription'];
+
+        if(isset($Subscription)){
+            echo 'Checked';
+        }
 
 
 

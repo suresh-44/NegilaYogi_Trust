@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['name']) and !isset($_SESSION['name'])) {
+    header("Location: index.php");
+    session_destroy();
+}
+
 $db_host = 'localhost'; // Server Name
 $db_user = 'root'; // Username
 $db_pass = ''; // Password
@@ -6,12 +12,12 @@ $db_name = 'negila_yogi'; // Database Name
 
 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 if (!$conn) {
-    die ('Failed to connect to MySQL: ' . mysqli_connect_error());  
+    die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-$sql = 'SELECT * 
+$sql = 'SELECT *
         FROM register';
-        
+
 $query = mysqli_query($conn, $sql);
 
 if (!$query) {
@@ -24,6 +30,7 @@ if (!$query) {
     <title>Report</title>
      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
      <link rel="stylesheet" type="text/css" href="css/E_form_css.css" media="screen" />
+     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
      <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
     <style type="text/css">
         body {
@@ -43,7 +50,7 @@ if (!$query) {
        legend{
         color: white;
          font-family: arial;
-         margin-top: 20px; 
+         margin-top: 20px;
        }
        h1{
         font-family: arial;
@@ -52,7 +59,7 @@ if (!$query) {
         table td {
             transition: all .5s;
         }
-        
+
         /* Table */
         .data-table {
             border-collapse: collapse;
@@ -74,13 +81,13 @@ background-color: transparent;
  font-family: Lobster;
 
 
-} 
-        .data-table th, 
+}
+        .data-table th,
         .data-table td {
             border: 1px solid #e1edff;
             padding: 7px 17px;
         }
-        
+
         /* Table Header */
         .data-table thead th {
             background-color: #508abb;
@@ -100,7 +107,7 @@ background-color: transparent;
         }
 
         .data-table tbody tr:nth-child(odd) td {
-            
+
         }
         .data-table tbody tr:hover td {
             background-color: #ffffa2;
@@ -117,7 +124,7 @@ background-color: transparent;
         }
         .data-table tbody td:empty
         {
-           
+
         }
     </style>
 </head>
@@ -130,18 +137,18 @@ background-color: transparent;
 
 <div class="margin">
             <a href="Home.php" class="the-click-button" placeholder="tejas">Home</a>
-            
-           
+
+
 </div>
 
 </h1>
 
- 
+
 
 </legend>
-   
+
     <table class="data-table" >
-       
+
         <thead>
             <tr>
                 <th>ID</th>
