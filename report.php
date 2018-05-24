@@ -147,7 +147,7 @@ background-color: transparent;
 
 </legend>
 
-    <table class="data-table" >
+    <table class="data-table" style="position: relative;right:100px;" >
 
         <thead>
             <tr>
@@ -160,8 +160,8 @@ background-color: transparent;
                 <th>address</th>
                 <th>city</th>
                 <th>zip-code</th>
+                <th>Subscription</th>
                 <th>description</th>
-                <th>image</th>
             </tr>
         </thead>
         <tbody>
@@ -181,8 +181,8 @@ background-color: transparent;
                     <td>'.$row['address'].'</td>
                     <td>'.$row['city'].'</td>
                     <td>'.$row['zip_code'].'</td>
-                    <td>'.$row['description'].'</td>
-                    <td>'.$row['image'].'</td>
+                    <td style="text-align:center;">'.$row['subscription'].'</td>
+                    <td style="text-align:left;">'.$row['description'].'</td>
                 </tr>';
             // $total += $row['amount'];
             $no++;

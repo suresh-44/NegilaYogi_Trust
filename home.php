@@ -13,8 +13,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home_page</title>
+    <title>Home page</title>
 
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/home.css" media="screen" />
@@ -115,15 +116,17 @@ font-size: 18px;
 
 
     background-color: rgba(red, green, blue, alpha);
+    
+
 }
 
 #col{
 
-  background-color: rgba(0, 0, 255, 0.1);
+  background-color: rgba(0, 0, 255, 0.0s);
   border-color:transparent;
   border-width: -10px;
   border-color: rgba(0, 0, 255, 0.0);
-margin-left: 1370px;
+margin-left: 1100px;
 }
 </style>
 </head>
@@ -144,9 +147,9 @@ margin-left: 1370px;
         <div id="stage">
 
             <!-- The button HTML code -->
-            <a href="register.php" class="the-click-button">Rigester</a>
+            <a href="register.php" class="the-click-button">Register</a>
             &nbsp; &nbsp;
-            <a href="report.php" class="the-click-button">Report</a>
+            <a href="report/report.php" class="the-click-button">Report</a>
   </div>
 
 </div>

@@ -17,6 +17,11 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <!-- // CSS -->
+    <link rel="stylesheet" href="css/popupmodal.css" />
+
+    <!-- // JS -->
+    <script src="js/popupmodal-min.js">></script>
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -38,6 +43,14 @@ div.ex3 {
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
     background: #FF0000;
+}
+[data-notify="progressbar"] {
+	margin-bottom: 0px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 5px;
 }
 
     .container-login100 {
@@ -112,10 +125,14 @@ background-color: transparent;
 
               if (cbox.checked) {
                    var html1,html2;
-                   html1 = '<div id="date-01" >From<input type="date" value="from" style="color: Black" name"date1" /> </div>'
-                   html2 = '<div id="date-02" >TO<input type="date" value="to" style="color: Black"  name"date2" /> </div>'
+
+                   html1 = '<div id="date-01" >From : &nbsp <input type="date" name="dateFrom" value="<?php echo date('d-m-Y'); ?>" style="color: Black" name"date1" /> </div>'
+
+                   html2 = '<div id="date-02" >TO : &nbsp &nbsp &nbsp<input type="date" name="dateTo" value="<?php echo date('d-m-Y'); ?>" style="color: Black; margin-top:10px;"  name"date2" /> </div>'
+
                    var d1 = document.getElementById('insertinputs1');
                    var d2 = document.getElementById('insertinputs2');
+
                    d1.insertAdjacentHTML('afterend',html1);
                    d2.insertAdjacentHTML('afterend',html2);
                } else {
@@ -154,10 +171,10 @@ background-color: transparent;
             <legend class="legnd">N e g i l a &nbsp;&nbsp;&nbsp;Y o g i &nbsp;&nbsp;&nbsp; T r u s t
 
             <div class="margin">
-            <a href="Home.php" class="the-click-button" placeholder="tejas">Home</a>
+                <a href="Home.php" class="the-click-button">Home</a>
 
-            <a href="report.php" class="the-click-button">Report</a>
-</div>
+                <a href="report/report.php" class="the-click-button">Report</a>
+            </div>
             </legend>
 
             <!-- Text input-->
@@ -249,7 +266,7 @@ background-color: transparent;
 
             <!-- Select Basic -->
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="col-md-4 control-label">State</label>
                 <div class="col-md-4 selectContainer">
                     <div class="input-group">
@@ -291,7 +308,7 @@ background-color: transparent;
                         </label>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Text input-->
 
@@ -314,7 +331,7 @@ background-color: transparent;
                 <div class="col-md-4">
                     <div class="radio">
                         <label>
-                            <input type="checkbox" name="hosting" onclick="dynInput(this)" /> Yes
+                            <input type="checkbox" value="check" name="hosting" onclick="dynInput(this)" /> Yes
                         </label>
                         <div id="insertinputs1"></div>  <div id="insertinputs2"></div>
 
@@ -337,7 +354,7 @@ background-color: transparent;
                 </div>
             </div>
 
-            <input type='file' onchange="readURL(this);" />
+            <!-- <input type='file' onchange="readURL(this);" /> -->
 
             <!-- Success message -->
 
@@ -426,29 +443,15 @@ background-color: transparent;
                     }
                 }
             },
-            zip: {
-                validators: {
-                    notEmpty: {
-                        message: 'Please supply your zip code'
-                    },
-                    zipCode: {
-                        country: 'IN',
-                        message: 'Please supply a vaild zip code'
-                    }
-                }
-            },
-		comment: {
-                validators: {
-                      stringLength: {
-                        min: 10,
-                        max: 200,
-                        message:'Please enter at least 10 characters and no more than 200'
-                    },
-                    notEmpty: {
-                        message: 'Please supply a description about yourself'
-                    }
-                    }
-                 },
+            // zip: {
+            //     validators: {
+            //         notEmpty: {
+            //             min :
+            //             message: 'Please supply your zip code'
+            //         }
+            //     }
+            // },
+
 	 email: {
                 validators: {
                     notEmpty: {
@@ -505,6 +508,10 @@ background-color: transparent;
 <?php
 
     if (isset($_REQUEST['upload']) ){
+        $connect=  mysqli_connect("localhost","root" , "","negila_yogi" );
+        if(mysqli_connect_errno())
+        { die("cannot connect to database field:". mysqli_connect_error());   }
+
 
         $first = $_REQUEST['first_name'];
         $second = $_REQUEST['last_name'];
@@ -517,27 +524,63 @@ background-color: transparent;
         $description = $_REQUEST['comment'];
         $Subscription = $_REQUEST['Subscription'];
 
-        if(isset($Subscription)){
-            echo 'Checked';
+        // $time = strtotime($_POST['dateFrom']);
+        // if ($time) {
+        //   $new_date = date('Y-m-d', $time);
+        //   echo $new_date;
+        // } else {
+        //    echo 'Invalid Date: ' . $_POST['dateFrom'];
+        //   // fix it.
+        // }
+        $time1 = strtotime($_POST['dateFrom']);
+        $time2 = strtotime($_POST['dateTo']);
+
+        if($time1){
+
+            $dateFrom = date('d-m-Y', $time1);
+            $dateTo   = date('d-m-Y', $time2);
+
+            $query="INSERT INTO `register` set id= '',
+                                                first_name='$first',
+                                                last_name='$second',
+                                                email='$email',
+                                                phone = '$phone',
+                                                occupation='$occupation',
+                                                address='$address',
+                                                city = '$city',
+                                                zip_code = '$zip_code',
+                                                subscription = 'YES',
+                                                from_date = '$dateFrom',
+                                                to_date = '$dateTo',
+                                                description = '$description'";
+
+        } else {
+            $query="INSERT INTO `register` set id= '',
+                                                first_name='$first',
+                                                last_name='$second',
+                                                email='$email',
+                                                phone = '$phone',
+                                                occupation='$occupation',
+                                                address='$address',
+                                                city = '$city',
+                                                zip_code = '$zip_code',
+                                                subscription = 'NO',
+                                                from_date = '---',
+                                                to_date = '---',
+                                                description = '$description'";
+
+
         }
 
 
-
-        $connect=  mysqli_connect("localhost","root" , "","negila_yogi" );
-        if(mysqli_connect_errno())
-        { die("cannot connect to database field:". mysqli_connect_error());   }
-
-        $query="INSERT INTO `register` set id= '',
-                                            first_name='$first',
-                                            last_name='$second',
-                                            email='$email',
-                                            phone = '$phone',
-                                            occupation='$occupation',
-                                            address='$address',
-                                            city = '$city',
-                                            zip_code = '$zip_code',
-                                            description = '$description'";
         $result=  mysqli_query($connect, $query);
+
+        if($result){
+            echo ("<SCRIPT LANGUAGE='JavaScript'>
+                    alert('success fully inserted');
+                    window.location.href='register.php';
+                    </SCRIPT>");
+        }
 
         mysqli_close($connect);
 
