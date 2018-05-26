@@ -207,6 +207,61 @@ background-color: transparent;
                 </div>
             </div>
 
+            <div class="form-group">
+                <label class="col-md-4 control-label" >Occupation</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+                        <input required name="occupation" placeholder="Occupation" class="form-control"  type="text">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Address</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <textarea required class="form-control" name="Address" placeholder="Address"></textarea>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">City</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input required name="city" placeholder="city" class="form-control"  type="text">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Zip Code</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input required name="zip" placeholder="Zip Code" class="form-control"  type="text">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Phone #</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                        <input required name="phone" placeholder="phone no" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label">E-Mail</label>
@@ -221,48 +276,16 @@ background-color: transparent;
 
             <!-- Text input-->
 
-            <div class="form-group">
-                <label class="col-md-4 control-label">Phone #</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                        <input required name="phone" placeholder="phone no" class="form-control" type="text">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4 control-label" >Occupation</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
-                        <input required name="occupation" placeholder="Occupation" class="form-control"  type="text">
-                    </div>
-                </div>
-            </div>
+
+
 
             <!-- Text input-->
 
-            <div class="form-group">
-                <label class="col-md-4 control-label">Address</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                        <input required name="address" placeholder="Address" class="form-control" type="text">
-                    </div>
-                </div>
-            </div>
+
 
             <!-- Text input-->
 
-            <div class="form-group">
-                <label class="col-md-4 control-label">City</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                        <input required name="city" placeholder="city" class="form-control"  type="text">
-                    </div>
-                </div>
-            </div>
+
 
             <!-- Select Basic -->
 
@@ -312,15 +335,7 @@ background-color: transparent;
 
             <!-- Text input-->
 
-            <div class="form-group">
-                <label class="col-md-4 control-label">Zip Code</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                        <input required name="zip" placeholder="Zip Code" class="form-control"  type="text">
-                    </div>
-                </div>
-            </div>
+
 
             <!-- Text input-->
 

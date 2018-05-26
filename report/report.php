@@ -42,44 +42,54 @@
 
 
 
-    .the-click-button {
-        background-color: rgba(255, 80, 53, 0.901961);
-        background-image: url(https://daks2k3a4ib2z.cloudfront.net/553f831feb855b6a5f0e42a8/5853beacc62327483d8324b7_mouse%205.svg), url(https://daks2k3a4ib2z.cloudfront.net/553f831feb855b6a5f0e42a8/5853beac5b991c28512ad40b_mouse1.svg);
-        background-position: 20px -12px, 20px 4px;
-        background-repeat: no-repeat;
-        background-size: 22px, 22px;
-        border-radius: 3px;
-        box-sizing: border-box;
-        color: rgb(255, 255, 255);
-        cursor: auto;
-        display: inline-block;
-        font-family: Montserrat, sans-serif;
-        font-size: 18px;
-        font-weight: normal;
-        height: 40px;
-        width: 140px;
-        line-height: 24px;
-        padding: 20px 30px 20px 60px;
-        text-align: left;
-        text-decoration: none;
-        margin-left: 85%;
-        text-shadow: rgba(0, 0, 0, 0.270588) 0px 1px 0px;
-        text-size-adjust: 100%;
-        transition-delay: 0s, 0s, 0s, 0s;
-        transition-duration: 0.2s, 0.2s, 0.2s, 0.2s;
-        transition: color 200ms ease, background-color 200ms ease, opacity 200ms ease, background-position 200ms ease, transform 50ms ease, -webkit-transform 50ms ease;
-        -webkit-touch-callout: none; /* iOS Safari */ -webkit-user-select: none; /* Chrome/Safari/Opera */ -moz-user-select: none; /* Firefox */ -ms-user-select: none; /* Internet Explorer/Edge */
-    }
-
-
 body{
     background-color: #b7b6aa;
 }
 
 #col{
-    margin-left: 80%;
+    margin-left: 93%;
+}
+.h1{
+    align-content: center;
+    color: white;
 }
 
+.form-group{
+
+margin-left: 93%;
+margin-bottom: 5%;
+
+}
+
+.menu{
+    background-color: red;
+    height: 5%;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #cb5a5a;
+  color: white;
+
+}
  </style>
 
 
@@ -87,14 +97,18 @@ body{
 <body>
 
     <div class="container">
-        <h1>N E G I L A &nbsp &nbsp  Y O G I</h1>
-        <a href="../home.php" class="btn btn-info btn-lg" id="col">
-            <span class="glyphicon glyphicon-log-out" id="align"></span> Home
-        </a>
-        <div class="form-group">
-            <button onclick="Export()" class="btn btn-primary">Download</button>
-        </div>
 
+<h1 class="header">N E G I L A&nbspY O G I &nbsp &nbsp T R U S T</h1>
+<div class="topnav">
+   <a class="active" href="logout.php">Logout</a>
+   <a onclick="Export()" href="#news">download</a>
+     <a href="../register.php">Register</a>
+    <a href="../home.php">Home</a>
+
+
+</div>
+
+<p>
 
         <table id="example" class="display" cellspacing="0" width="100%">
             <thead>
@@ -135,7 +149,7 @@ body{
     </div>
 
 
-
+</p>
     <script>
         $(document).ready(function(){
             var dataTable=$('#example').DataTable({

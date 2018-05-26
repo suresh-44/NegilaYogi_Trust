@@ -82,41 +82,13 @@ width: 100%;
     position: relative;
     z-index: 1;
 }
-#button{
 
-width: 120px;
-height: 20px;
-background-color: transparent;
-background-color: rgba(255, 80, 53, 0.901961);
- background-image: url(https://daks2k3a4ib2z.cloudfront.net/553f831feb855b6a5f0e42a8/5853beacc62327483d8324b7_mouse%205.svg), url(https://daks2k3a4ib2z.cloudfront.net/553f831feb855b6a5f0e42a8/5853beac5b991c28512ad40b_mouse1.svg);
-   border-radius: 3px;
-    box-sizing: border-box;
-    color: rgb(255, 255, 255);
-    cursor: auto;
-    display: inline-block;
-    background-position: 20px -12px, 20px 4px;
-    background-repeat: no-repeat;
-font-size: 18px;
-    font-weight: normal;
-    line-height: 24px;
-    padding: 20px 30px 20px 60px;
-    text-align: left;
-    text-decoration: none;
-    margin-left: 800px;
-    text-shadow: rgba(0, 0, 0, 0.270588) 0px 1px 0px;
-    text-size-adjust: 100%;
-    transition-delay: 0s, 0s, 0s, 0s;
-    transition-duration: 0.2s, 0.2s, 0.2s, 0.2s;
-    transition: color 200ms ease, background-color 200ms ease, opacity 200ms ease, background-position 200ms ease, transform 50ms ease, -webkit-transform 50ms ease;
-    -webkit-touch-callout: none; /* iOS Safari */ -webkit-user-select: none; /* Chrome/Safari/Opera */ -moz-user-select: none; /* Firefox */ -ms-user-select: none; /* Internet Explorer/Edge */
-}
 #align {
 
 
 
 
     background-color: rgba(red, green, blue, alpha);
-    
 
 }
 
@@ -126,7 +98,7 @@ font-size: 18px;
   border-color:transparent;
   border-width: -10px;
   border-color: rgba(0, 0, 255, 0.0);
-margin-left: 1100px;
+margin-left: 90%;
 }
 </style>
 </head>
