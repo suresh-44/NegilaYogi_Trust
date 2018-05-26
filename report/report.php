@@ -89,8 +89,12 @@ body{
     <div class="container">
         <h1>N E G I L A &nbsp &nbsp  Y O G I</h1>
         <a href="../home.php" class="btn btn-info btn-lg" id="col">
-<span class="glyphicon glyphicon-log-out" id="align"></span> Home
-</a>
+            <span class="glyphicon glyphicon-log-out" id="align"></span> Home
+        </a>
+        <div class="form-group">
+            <button onclick="Export()" class="btn btn-primary">Download</button>
+        </div>
+
 
         <table id="example" class="display" cellspacing="0" width="100%">
             <thead>
@@ -163,6 +167,15 @@ body{
                 $('#content-data').html('<p>Error</p>');
             });
         });
+
+        function Export()
+        {
+            var conf = confirm("Do you want to Download ?");
+            if(conf == true)
+            {
+                window.open("export.php", '_blank');
+            }
+        }
     </script>
 </body>
 </html>

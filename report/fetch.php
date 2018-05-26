@@ -31,7 +31,7 @@ if(!empty($request['search']['value'])){
     $sql.=" AND (id Like '".$request['search']['value']."%' ";
     $sql.=" OR first_name Like '".$request['search']['value']."%' ";
     $sql.=" OR last_name Like '".$request['search']['value']."%' ";
-    $sql.=" OR email Like '".$request['search']['value']."%' )";
+    $sql.=" OR phone Like '".$request['search']['value']."%' )";
 }
 $query=mysqli_query($con,$sql);
 $totalData=mysqli_num_rows($query);
